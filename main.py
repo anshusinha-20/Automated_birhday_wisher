@@ -56,40 +56,40 @@
 
 ## challenge 1: send motivational quotes on wednesday via email
 
-"""imported smtplib module"""
-import smtplib
-
-"""imported datetime module as dt"""
-import datetime as dt
-
-"""imported random module"""
-import random
-
-"""created the now object"""
-now = dt.datetime.now()
-dayOfTheWeek = now.weekday()
-
-"""variable to store email address and password"""
-myEmail = "gpython72@gmail.com"
-password = "blxfzquksftguoxk"
-
-"""variable to store receiver's address"""
-receiver = "anshujuly26@yahoo.com"
-
-"""reading text file"""
-with open("quotes.txt") as file:
-    quotesList = file.readlines()
-
-"""send email when it's wednesday"""
-if dayOfTheWeek == 2:
-    with smtplib.SMTP("smtp.gmail.com", port=587, timeout=25) as connection:
-        connection.starttls()
-        connection.login(
-            user=myEmail,
-            password=password,
-        )
-        connection.sendmail(
-            from_addr=myEmail,
-            to_addrs=receiver,
-            msg=f"Subject:Wednesday motivational quote!\n\n{random.choice(quotesList)}",
-        )
+# """imported smtplib module"""
+# import smtplib
+#
+# """imported datetime module as dt"""
+# import datetime as dt
+#
+# """imported random module"""
+# import random
+#
+# """created the now object"""
+# now = dt.datetime.now()
+# dayOfTheWeek = now.weekday()
+#
+# """variable to store email address and password"""
+# myEmail = "gpython72@gmail.com"
+# password = "blxfzquksftguoxk"
+#
+# """variable to store receiver's address"""
+# receiver = "anshujuly26@yahoo.com"
+#
+# """reading text file"""
+# with open("quotes.txt") as file:
+#     quotesList = file.readlines()
+#
+# """send email when it's wednesday"""
+# if dayOfTheWeek == 2:
+#     with smtplib.SMTP("smtp.gmail.com", port=587, timeout=25) as connection:
+#         connection.starttls()
+#         connection.login(
+#             user=myEmail,
+#             password=password,
+#         )
+#         connection.sendmail(
+#             from_addr=myEmail,
+#             to_addrs=receiver,
+#             msg=f"Subject:Wednesday motivational quote!\n\n{random.choice(quotesList)}",
+#         )
