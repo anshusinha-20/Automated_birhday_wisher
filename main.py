@@ -162,10 +162,13 @@ with smtplib.SMTP("smtp.gmail.com", port=587, timeout=25) as connection:
                 letter = file.read()
                 birthdayLetter = letter.replace("[NAME]", birthdayPerson)
 
-    connection.sendmail(
-        from_addr=myEmail,
-        to_addrs=birthdayPersonEmail,
-        msg=f"Subject:Happy birthday {birthdayPerson}!\n\n{birthdayLetter}"
-    )
+            connection.sendmail(
+                from_addr=myEmail,
+                to_addrs=birthdayPersonEmail,
+                msg=f"Subject:Happy birthday {birthdayPerson}!\n\n{birthdayLetter}"
+            )
+
+        else:
+            break
 
 
